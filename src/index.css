@@ -1,0 +1,682 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    padding: 20px;
+    font-family: Poppins;
+}
+
+.card {
+    width: 80vw;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-inner {
+  width: inherit;
+  height: inherit;
+  background: rgba(255,255,255,.4);
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding:20px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-image: linear-gradient(225deg, #82c91e 5%, #3bc9db 95%);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle:nth-child(1) {
+  top: -25px;
+  left: -25px;
+}
+
+.circle:nth-child(2) {
+  bottom: -25px;
+  right: -25px;
+}
+form{
+    display: flex;
+}
+
+form input{
+   width: 75%;
+    height: 56px;
+    border-radius: 8px 0px 0px 8px;
+    border:1px solid #ccc;
+
+}
+
+form input:placeholder-shown{
+    font-family: Poppins;
+    font-weight: 300;
+}
+form input:focus{
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+form button{
+    display: flex;
+    text-align: center;
+    color:  white;
+    background-color: #82c91e;
+    width: 25%;
+    height: 60px;
+    border-radius: 0px 8px 8px 0px;
+    border:none;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+    font-weight: 300;
+    transition: 200ms ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+form button:hover{
+    background-color: #88da16;
+}
+span{
+    font-weight: 400;
+    font-size: 18px;
+}
+p{
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.4);
+}
+table td{
+    font-weight: 300;
+}
+ table tbody{
+    width: 100%;
+    height: 30px;
+}
+.task{
+    width: 75vw;
+    padding: 20px;
+    height: 250px;
+    background: rgba(255,255,255,.4);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    overflow-y: scroll;
+    border-radius: 8px;
+}
+
+.completed-task{
+    margin-top: 20px;
+    width: 75vw;
+    padding: 20px;
+    height: 250px;
+    background: rgba(255,255,255,.4);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    overflow-y: scroll;
+    border-radius: 8px;
+}
+.task th{
+    text-align:center;
+}
+.delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 20px 0px;
+}
+.delete button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+i{
+    color:#82c91e;
+    font-size:24px;
+    height: auto;
+}
+
+.cl-checkbox {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+   }
+   
+   /* Input */
+   .cl-checkbox > input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    z-index: -1;
+    position: absolute;
+    left: -10px;
+    top: -8px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: none;
+    outline: none;
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.2s;
+   }
+   
+   /* Span */
+   .cl-checkbox > span {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+   }
+   
+   /* Box */
+   .cl-checkbox > span::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 3px 11px 3px 1px;
+    border: solid 2px;
+    /* Safari */
+    border-color: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    transition: border-color 0.2s, background-color 0.2s;
+   }
+   
+   /* Checkmark */
+   .cl-checkbox > span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 1px;
+    width: 10px;
+    height: 5px;
+    border: solid 2px transparent;
+    border-right: none;
+    border-top: none;
+    transform: translate(3px, 4px) rotate(-45deg);
+   }
+   
+   /* Checked, Indeterminate */
+   .cl-checkbox > input:checked,
+   .cl-checkbox > input:indeterminate {
+    background-color: #018786;
+   }
+   
+   .cl-checkbox > input:checked + span::before,
+   .cl-checkbox > input:indeterminate + span::before {
+    border-color: #018786;
+    background-color: #018786;
+   }
+   
+   .cl-checkbox > input:checked + span::after,
+   .cl-checkbox > input:indeterminate + span::after {
+    border-color: #fff;
+   }
+   
+   .cl-checkbox > input:indeterminate + span::after {
+    border-left: none;
+    transform: translate(4px, 3px);
+   }
+   
+   /* Hover, Focus */
+   .cl-checkbox:hover > input {
+    opacity: 0.04;
+   }
+   
+   .cl-checkbox > input:focus {
+    opacity: 0.12;
+   }
+   
+   .cl-checkbox:hover > input:focus {
+    opacity: 0.16;
+   }
+   
+   /* Active */
+   .cl-checkbox > input:active {
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 0s, opacity 0s;
+   }
+   
+   .cl-checkbox > input:active + span::before {
+    border-color: #85b8b7;
+   }
+   
+   .cl-checkbox > input:checked:active + span::before {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.6);
+   }
+   
+   /* Disabled */
+   .cl-checkbox > input:disabled {
+    opacity: 0;
+   }
+   
+   .cl-checkbox > input:disabled + span {
+    color: rgba(0, 0, 0, 0.38);
+    cursor: initial;
+   }
+   
+   .cl-checkbox > input:disabled + span::before {
+    border-color: currentColor;
+   }
+   
+   .cl-checkbox > input:checked:disabled + span::before,
+   .cl-checkbox > input:indeterminate:disabled + span::before {
+    border-color: transparent;
+    background-color: currentColor;
+   }
+   
+   @media screen and (max-width:750px) {
+    .circle {
+        width: 70px;
+        height: 70px;
+      }
+      .card {
+        width: 95vw;
+    }
+    span{
+        font-weight: 400;
+        font-size: 16px;
+    }
+    p{
+        margin-bottom: 20px;
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 16px;
+    }
+    li{
+        font-size: 12px;
+    }
+    .task{
+        width: 86vw;
+        padding: 10px;
+        height: 250px;
+        background: rgba(255,255,255,.4);
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+    
+    .completed-task{
+        margin-top: 20px;
+        width: 86vw;
+        padding: 10px;
+        height: 250px;
+        background: rgba(255,255,255,.4);
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+
+    form button{
+        display: flex;
+        text-align: center;
+        color:  white;
+        background-color: #82c91e;
+        width: 20%;
+        height: 60px;
+        border-radius: 0px 8px 8px 0px;
+        border:none;
+        justify-content: center;
+        align-items: center;
+        font-family: Poppins;
+        font-weight: 300;
+        transition: 200ms ease;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input{
+        width: 80%;
+         height: 56px;
+         border-radius: 8px 0px 0px 8px;
+         border:1px solid #ccc;
+     
+     }
+   }
+   
+   @media screen and (max-width:643px) {
+    .circle {
+        width: 50px;
+        height: 50px;
+      }
+      .card {
+        width: 95vw;
+    }
+    span{
+        font-weight: 400;
+        font-size: 14px;
+    }
+    p{
+        margin-bottom: 20px;
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 14px;
+    }
+    li{
+        font-size: 10px;
+    }
+    .task{
+        width: 86vw;
+        padding: 10px;
+        height: 250px;
+        background: rgba(255,255,255,.4);
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+    
+    .completed-task{
+        margin-top: 20px;
+        width: 86vw;
+        padding: 10px;
+        height: 250px;
+        background: rgba(255,255,255,.4);
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+
+    form button{
+        display: flex;
+        text-align: center;
+        color:  white;
+        background-color: #82c91e;
+        width: 15%;
+        height: 60px;
+        border-radius: 0px 8px 8px 0px;
+        border:none;
+        justify-content: center;
+        align-items: center;
+        font-family: Poppins;
+        font-weight: 300;
+        transition: 200ms ease;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input{
+        width: 85%;
+         height: 56px;
+         border-radius: 8px 0px 0px 8px;
+         border:1px solid #ccc;
+     
+     }
+     .cl-checkbox > span::before {
+        content: "";
+        display: inline-block;
+        box-sizing: border-box;
+        margin: 3px 0px 3px 1px;
+        border: solid 2px;
+        /* Safari */
+        border-color: rgba(0, 0, 0, 0.6);
+        border-radius: 2px;
+        width: 16px;
+        height: 16px;
+        vertical-align: top;
+        transition: border-color 0.2s, background-color 0.2s;
+       }
+   }
+   @media screen and (max-width:550px) {
+    .circle {
+        width: 50px;
+        height: 50px;
+      }
+      .card {
+        width: 95vw;
+    }
+    span{
+        font-weight: 400;
+        font-size: 12px;
+    }
+    p{
+        margin-bottom: 20px;
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 12px;
+    }
+    li{
+        font-size: 9px;
+        font-weight:300;
+    }
+    .task{
+        width: 86vw;
+        padding: 10px;
+        height: 250px;
+        background: rgba(255,255,255,.4);
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+    
+    .completed-task{
+        margin-top: 20px;
+        width: 86vw;
+        padding: 10px;
+        height: 250px;
+        background: rgba(255,255,255,.4);
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+
+    form button{
+        display: flex;
+        text-align: center;
+        color:  white;
+        background-color: #82c91e;
+        width: 15%;
+        height: 44px;
+        border-radius: 0px 8px 8px 0px;
+        border:none;
+        justify-content: center;
+        align-items: center;
+        font-family: Poppins;
+        font-weight: 300;
+        transition: 200ms ease;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input{
+        width: 85%;
+         height: 40px;
+         border-radius: 8px 0px 0px 8px;
+         border:1px solid #ccc;
+     
+     }
+form input::placeholder{
+    font-size: 12px;
+}
+.cl-checkbox > span::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 3px 0px 3px 1px;
+    border: solid 2px;
+    /* Safari */
+    border-color: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+    width: 14px;
+    height: 14px;
+    vertical-align: top;
+    transition: border-color 0.2s, background-color 0.2s;
+   }
+}
+@media screen and (max-width:500px) {
+    .circle {
+        width: 40px;
+        height: 40px;
+      }
+      .card {
+        width: 95vw;
+    }
+    span{
+        font-weight: 400;
+        font-size: 10px;
+    }
+    p{
+        margin-bottom: 20px;
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 10px;
+    }
+    li{
+        font-size: 8px;
+        font-weight:300;
+    }
+    .task{
+        width: 92vw;
+        padding: 8px;
+        height: 250px;
+        background: rgba(255,255,255,.4);
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+    
+    .completed-task{
+        margin-top: 20px;
+        width: 92vw;
+        padding: 8px;
+        height: 250px;
+        background: rgba(255,255,255,.4);
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+
+    form button{
+        display: flex;
+        text-align: center;
+        color:  white;
+        background-color: #82c91e;
+        width: 15%;
+        height: 34px;
+        border-radius: 0px 8px 8px 0px;
+        border:none;
+        justify-content: center;
+        align-items: center;
+        font-family: Poppins;
+        font-weight: 300;
+        transition: 200ms ease;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input{
+        width: 85%;
+         height: 30px;
+         border-radius: 8px 0px 0px 8px;
+         border:1px solid #ccc;
+     
+     }
+form input::placeholder, button{
+    font-size: 10px;
+}
+.cl-checkbox > span::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 3px 0px 3px 1px;
+    border: solid 2px;
+    /* Safari */
+    border-color: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+    width: 12px;
+    height: 12px;
+    vertical-align: top;
+    transition: border-color 0.2s, background-color 0.2s;
+   }
+}
+
+@media screen and (max-width:400px) {
+    .circle {
+        width: 40px;
+        height: 40px;
+      }
+      .card {
+        width: 95vw;
+    }
+    span{
+        font-weight: 400;
+        font-size: 10px;
+    }
+    p{
+        margin-bottom: 20px;
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 10px;
+    }
+    li{
+        font-size: 6.5px;
+        font-weight:300;
+    }
+    .task{
+        width: 92vw;
+        padding: 8px;
+        height: 250px;
+        background: rgba(255,255,255,.4);
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+    
+    .completed-task{
+        margin-top: 20px;
+        width: 92vw;
+        padding: 8px;
+        height: 250px;
+        background: rgba(255,255,255,.4);
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+
+    form button{
+        display: flex;
+        text-align: center;
+        color:  white;
+        background-color: #82c91e;
+        width: 15%;
+        height: 34px;
+        border-radius: 0px 8px 8px 0px;
+        border:none;
+        justify-content: center;
+        align-items: center;
+        font-family: Poppins;
+        font-weight: 300;
+        transition: 200ms ease;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input{
+        width: 85%;
+         height: 30px;
+         border-radius: 8px 0px 0px 8px;
+         border:1px solid #ccc;
+     
+     }
+form input::placeholder, button{
+    font-size: 10px;
+}
+.cl-checkbox > span::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 3px 0px 3px 0px;
+    border: solid 2px;
+    /* Safari */
+    border-color: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+    width: 12px;
+    height: 12px;
+    vertical-align: top;
+    transition: border-color 0.2s, background-color 0.2s;
+   }
+}
